@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.AWS_EC2_USER }}
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
           script: |
-            docker load < demo-project.tar.gz
-            docker stop next-app || true
-            docker rm next-app || true
-            docker run -d -p 80:5000 --name next-app demo-project
+            sudo docker load < demo-project.tar.gz
+            sudo docker stop next-app || true
+            sudo docker rm next-app || true
+            sudo docker run -d -p 80:5000 --name next-app demo-project
